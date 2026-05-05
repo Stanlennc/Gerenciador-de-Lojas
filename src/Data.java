@@ -6,35 +6,33 @@ public class Data {
     public Data(int dia, int mes, int ano) {
         boolean dataValida = true;
 
-        // 1. Verifica se o mês é válido
         if (mes < 1 || mes > 12) {
             dataValida = false;
         } else {
-            // 2. Determina o limite de dias do mês
+
             int diasNoMes;
             switch (mes) {
-                case 2: // Fevereiro
-                    // Regra do ano bissexto
+                case 2:
+
                     if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
                         diasNoMes = 29;
                     } else {
                         diasNoMes = 28;
                     }
                     break;
-                case 4: case 6: case 9: case 11: // Meses de 30 dias
+                case 4: case 6: case 9: case 11:
                     diasNoMes = 30;
                     break;
-                default: // Meses de 31 dias
+                default:
                     diasNoMes = 31;
             }
 
-            // 3. Verifica se o dia está no intervalo correto
+
             if (dia < 1 || dia > diasNoMes) {
                 dataValida = false;
             }
         }
 
-        // 4. Atribui os valores ou define o padrão
         if (dataValida) {
             this.dia = dia;
             this.mes = mes;

@@ -7,14 +7,15 @@ public class Endereco {
     String numero;
     String complemento;
 
-    public Endereco(String cep, String cidade, String complemento, String estado, String nomeDaRua, String numero, String pais) {
-        this.cep = cep;
-        this.cidade = cidade;
-        this.complemento = complemento;
-        this.estado = estado;
+    public Endereco(String nomeDaRua, String cidade, String estado, String pais, String cep, String numero,
+            String complemento) {
         this.nomeDaRua = nomeDaRua;
-        this.numero = numero;
+        this.cidade = cidade;
+        this.estado = estado;
         this.pais = pais;
+        this.cep = cep;
+        this.numero = numero;
+        this.complemento = complemento;
     }
 
     public String getCep() {

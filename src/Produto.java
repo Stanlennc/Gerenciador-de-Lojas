@@ -1,20 +1,12 @@
 public class Produto {
     public String nome;
-    public String preco;
+    public double preco;
     private Data dataValidade;
 
-    public Produto(String nome, String preco, Data dataValidadeProduto){
+    public Produto(String nome, double preco, Data dataValidadeProduto) {
         this.nome = nome;
         this.preco = preco;
         this.dataValidade = dataValidadeProduto;
-    }
-
-    public Data getDataValidade() {
-        return dataValidade;
-    }
-
-    public void setDataValidade(Data dataValidade) {
-        this.dataValidade = dataValidade;
     }
 
     public String getNome() {
@@ -25,17 +17,25 @@ public class Produto {
         this.nome = nome;
     }
 
-    public String getPreco() {
+    public double getPreco() {
         return preco;
     }
 
-    public void setPreco(String preco) {
+    public void setPreco(double preco) {
         this.preco = preco;
+    }
+
+    public Data getDataValidade() {
+        return dataValidade;
+    }
+
+    public void setDataValidade(Data dataValidade) {
+        this.dataValidade = dataValidade;
     }
 
     @Override
     public String toString() {
-        return "FRUTAS DISPONIVEIS:\n"+"Fruta: "+nome+"\n"+"preço: "+preco+ "\n"+"data de validade: "+getDataValidade();
+        return "Nome: " + nome + " | Preço: " + preco + " | Validade: " + dataValidade;
     }
 
     public boolean estaVencido(Data dataAtual) {
@@ -54,7 +54,5 @@ public class Produto {
 
         return this.dataValidade.getDia() < dataAtual.getDia();
     }
-
-
 
 }
